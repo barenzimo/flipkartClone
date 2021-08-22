@@ -4,7 +4,7 @@ const env = require("dotenv");
 const app = express();
 env.config();
 
-const userRoutes = require("./routes/user.js");
+const userRoutes = require("./routes/auth.js");
 
 // All the middlewares
 app.use(express.urlencoded({ extended: true }));
