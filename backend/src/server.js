@@ -5,11 +5,13 @@ const app = express();
 env.config();
 
 const userRoutes = require("./routes/auth.js");
+const adminRoutes = require("./routes/admin/auth");
 
 // All the middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/user", userRoutes);
+app.use("/admin", adminRoutes);
 
 //mongoose connection
 const MONGO_LINK = `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.bdeav.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
